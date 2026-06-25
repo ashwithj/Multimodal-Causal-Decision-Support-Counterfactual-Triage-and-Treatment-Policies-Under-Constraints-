@@ -1,0 +1,269 @@
+======================================================================
+ FAIRNESS ANALYSIS REPORT — XGBoost ICU Admission Prediction Model
+======================================================================
+
+Model        : best_model.pkl  (best_iteration=238)
+Dataset      : 0_final_dataset.csv
+Test patients: 33518
+Threshold    : 0.5
+
+──────────────────────────────────────────────────────────────────────
+OVERALL TEST PERFORMANCE
+──────────────────────────────────────────────────────────────────────
+  AUROC : 0.8584
+  AUPRC : 0.6553
+
+──────────────────────────────────────────────────────────────────────
+DIMENSION: GENDER
+──────────────────────────────────────────────────────────────────────
+  F                                    n=17744  prev=15.9%  AUROC=0.855  AUPRC=0.593  sens=0.717  spec=0.828  PPV=0.440  Brier=0.129
+  M                                    n=15774  prev=23.9%  AUROC=0.855  AUPRC=0.697  sens=0.809  spec=0.734  PPV=0.488  Brier=0.163
+
+  Disparity summary:
+    auroc       : spread=0.000  (min=0.855 [F]  max=0.855 [M])  ✓  OK
+    sensitivity : spread=0.091  (min=0.717 [F]  max=0.809 [M])  ⚠  CONCERN
+    specificity : spread=0.094  (min=0.734 [M]  max=0.828 [F])  ⚠  CONCERN
+    fpr         : spread=0.094  (min=0.172 [F]  max=0.266 [M])  ⚠  CONCERN
+    ppv         : spread=0.049  (min=0.440 [F]  max=0.488 [M])  ✓  OK
+    brier       : spread=0.034  (min=0.129 [F]  max=0.163 [M])  ⚠  CONCERN
+
+──────────────────────────────────────────────────────────────────────
+DIMENSION: RACE
+──────────────────────────────────────────────────────────────────────
+  AMERICAN INDIAN/ALASKA NATIVE        n=   80  prev=22.5%  AUROC=0.869  AUPRC=0.772  sens=0.722  spec=0.774  PPV=0.481  Brier=0.137
+  ASIAN                                n=  660  prev=12.3%  AUROC=0.834  AUPRC=0.399  sens=0.605  spec=0.852  PPV=0.363  Brier=0.124
+  ASIAN - ASIAN INDIAN                 n=  105  prev=17.1%  AUROC=0.786  AUPRC=0.535  sens=0.556  spec=0.874  PPV=0.476  Brier=0.133
+  ASIAN - CHINESE                      n=  509  prev=10.0%  AUROC=0.858  AUPRC=0.406  sens=0.784  spec=0.845  PPV=0.360  Brier=0.117
+  ASIAN - KOREAN                       n=   57  prev=14.0%  AUROC=0.650  AUPRC=0.437  sens=0.250  spec=0.939  PPV=0.400  Brier=0.122
+  ASIAN - SOUTH EAST ASIAN             n=  125  prev=18.4%  AUROC=0.827  AUPRC=0.544  sens=0.652  spec=0.833  PPV=0.469  Brier=0.142
+  BLACK/AFRICAN                        n=  211  prev=7.1%  AUROC=0.798  AUPRC=0.440  sens=0.667  spec=0.786  PPV=0.192  Brier=0.132
+  BLACK/AFRICAN AMERICAN               n= 3542  prev=9.8%  AUROC=0.805  AUPRC=0.352  sens=0.457  spec=0.885  PPV=0.302  Brier=0.111
+  BLACK/CAPE VERDEAN                   n=  353  prev=9.1%  AUROC=0.840  AUPRC=0.479  sens=0.500  spec=0.906  PPV=0.348  Brier=0.093
+  BLACK/CARIBBEAN ISLAND               n=  191  prev=16.8%  AUROC=0.914  AUPRC=0.675  sens=0.875  spec=0.792  PPV=0.459  Brier=0.126
+  HISPANIC OR LATINO                   n=  604  prev=7.8%  AUROC=0.801  AUPRC=0.385  sens=0.447  spec=0.923  PPV=0.328  Brier=0.099
+  HISPANIC/LATINO - COLUMBIAN          n=   40  prev=10.0%  AUROC=0.708  AUPRC=0.572  sens=0.500  spec=0.917  PPV=0.400  Brier=0.114
+  HISPANIC/LATINO - CUBAN              n=   33  prev=12.1%  AUROC=0.862  AUPRC=0.588  sens=0.750  spec=0.621  PPV=0.214  Brier=0.202
+  HISPANIC/LATINO - DOMINICAN          n=  344  prev=11.9%  AUROC=0.748  AUPRC=0.411  sens=0.512  spec=0.812  PPV=0.269  Brier=0.146
+  HISPANIC/LATINO - GUATEMALAN         n=  103  prev=15.5%  AUROC=0.728  AUPRC=0.495  sens=0.375  spec=0.862  PPV=0.333  Brier=0.144
+  HISPANIC/LATINO - HONDURAN           n=   31  prev=16.1%  AUROC=0.915  AUPRC=0.659  sens=1.000  spec=0.846  PPV=0.556  Brier=0.119
+  HISPANIC/LATINO - MEXICAN            n=   66  prev=7.6%  AUROC=0.587  AUPRC=0.107  sens=0.000  spec=0.754  PPV=0.000  Brier=0.159
+  HISPANIC/LATINO - PUERTO RICAN       n=  453  prev=11.9%  AUROC=0.841  AUPRC=0.492  sens=0.704  spec=0.847  PPV=0.384  Brier=0.118
+  HISPANIC/LATINO - SALVADORAN         n=   74  prev=18.9%  AUROC=0.861  AUPRC=0.612  sens=0.714  spec=0.833  PPV=0.500  Brier=0.130
+  MULTIPLE RACE/ETHNICITY              n=   45  prev=8.9%  AUROC=0.616  AUPRC=0.139  sens=0.000  spec=0.902  PPV=0.000  Brier=0.123
+  NATIVE HAWAIIAN OR OTHER PACIFIC IS  n=   41  prev=31.7%  AUROC=0.951  AUPRC=0.921  sens=0.923  spec=0.750  PPV=0.632  Brier=0.129
+  OTHER                                n= 1440  prev=16.9%  AUROC=0.829  AUPRC=0.529  sens=0.701  spec=0.788  PPV=0.403  Brier=0.148
+  PATIENT DECLINED TO ANSWER           n=  229  prev=24.9%  AUROC=0.859  AUPRC=0.704  sens=0.825  spec=0.709  PPV=0.484  Brier=0.162
+  PORTUGUESE                           n=   88  prev=26.1%  AUROC=0.876  AUPRC=0.698  sens=0.826  spec=0.739  PPV=0.528  Brier=0.146
+  SOUTH AMERICAN                       n=   53  prev=11.3%  AUROC=0.851  AUPRC=0.555  sens=0.500  spec=0.894  PPV=0.375  Brier=0.104
+  UNABLE TO OBTAIN                     n=  424  prev=58.0%  AUROC=0.878  AUPRC=0.889  sens=0.951  spec=0.590  PPV=0.762  Brier=0.157
+  UNKNOWN                              n= 1710  prev=61.1%  AUROC=0.882  AUPRC=0.907  sens=0.951  spec=0.553  PPV=0.769  Brier=0.150
+  WHITE                                n=20713  prev=19.0%  AUROC=0.837  AUPRC=0.580  sens=0.762  spec=0.764  PPV=0.430  Brier=0.155
+  WHITE - BRAZILIAN                    n=   91  prev=13.2%  AUROC=0.812  AUPRC=0.362  sens=0.500  spec=0.848  PPV=0.333  Brier=0.124
+  WHITE - EASTERN EUROPEAN             n=  110  prev=15.4%  AUROC=0.787  AUPRC=0.439  sens=0.706  spec=0.731  PPV=0.324  Brier=0.169
+  WHITE - OTHER EUROPEAN               n=  726  prev=20.2%  AUROC=0.858  AUPRC=0.690  sens=0.789  spec=0.786  PPV=0.483  Brier=0.142
+  WHITE - RUSSIAN                      n=  244  prev=11.9%  AUROC=0.767  AUPRC=0.497  sens=0.586  spec=0.800  PPV=0.283  Brier=0.135
+
+  Disparity summary:
+    auroc       : spread=0.364  (min=0.587 [HISPANIC/LATINO - ME]  max=0.951 [NATIVE HAWAIIAN OR O])  ⚠  CONCERN
+    sensitivity : spread=1.000  (min=0.000 [HISPANIC/LATINO - ME]  max=1.000 [HISPANIC/LATINO - HO])  ⚠  CONCERN
+    specificity : spread=0.386  (min=0.553 [UNKNOWN]  max=0.939 [ASIAN - KOREAN])  ⚠  CONCERN
+    fpr         : spread=0.386  (min=0.061 [ASIAN - KOREAN]  max=0.447 [UNKNOWN])  ⚠  CONCERN
+    ppv         : spread=0.769  (min=0.000 [HISPANIC/LATINO - ME]  max=0.769 [UNKNOWN])  ⚠  CONCERN
+    brier       : spread=0.109  (min=0.093 [BLACK/CAPE VERDEAN]  max=0.202 [HISPANIC/LATINO - CU])  ⚠  CONCERN
+
+──────────────────────────────────────────────────────────────────────
+DIMENSION: INSURANCE
+──────────────────────────────────────────────────────────────────────
+  Medicaid                             n= 5802  prev=16.7%  AUROC=0.834  AUPRC=0.576  sens=0.687  spec=0.804  PPV=0.412  Brier=0.141
+  Medicare                             n=12244  prev=26.7%  AUROC=0.858  AUPRC=0.712  sens=0.845  spec=0.721  PPV=0.524  Brier=0.168
+  No charge                            n=   40  prev=2.5%  AUROC=0.487  AUPRC=0.048  sens=0.000  spec=0.974  PPV=0.000  Brier=0.050
+  Other                                n= 1094  prev=17.8%  AUROC=0.852  AUPRC=0.590  sens=0.774  spec=0.738  PPV=0.390  Brier=0.149
+  Private                              n=14338  prev=15.1%  AUROC=0.850  AUPRC=0.592  sens=0.693  spec=0.830  PPV=0.419  Brier=0.127
+
+  Disparity summary:
+    auroc       : spread=0.371  (min=0.487 [No charge]  max=0.858 [Medicare])  ⚠  CONCERN
+    sensitivity : spread=0.845  (min=0.000 [No charge]  max=0.845 [Medicare])  ⚠  CONCERN
+    specificity : spread=0.254  (min=0.721 [Medicare]  max=0.974 [No charge])  ⚠  CONCERN
+    fpr         : spread=0.254  (min=0.026 [No charge]  max=0.279 [Medicare])  ⚠  CONCERN
+    ppv         : spread=0.524  (min=0.000 [No charge]  max=0.524 [Medicare])  ⚠  CONCERN
+    brier       : spread=0.118  (min=0.050 [No charge]  max=0.168 [Medicare])  ⚠  CONCERN
+
+──────────────────────────────────────────────────────────────────────
+DIMENSION: MARITAL_STATUS
+──────────────────────────────────────────────────────────────────────
+  DIVORCED                             n= 2038  prev=21.4%  AUROC=0.837  AUPRC=0.615  sens=0.803  spec=0.711  PPV=0.430  Brier=0.163
+  MARRIED                              n=15898  prev=23.8%  AUROC=0.874  AUPRC=0.725  sens=0.828  spec=0.749  PPV=0.508  Brier=0.151
+  SINGLE                               n=12645  prev=13.6%  AUROC=0.821  AUPRC=0.492  sens=0.615  spec=0.845  PPV=0.385  Brier=0.130
+  WIDOWED                              n= 2937  prev=21.8%  AUROC=0.843  AUPRC=0.616  sens=0.817  spec=0.749  PPV=0.476  Brier=0.164
+
+  Disparity summary:
+    auroc       : spread=0.053  (min=0.821 [SINGLE]  max=0.874 [MARRIED])  ⚠  CONCERN
+    sensitivity : spread=0.213  (min=0.615 [SINGLE]  max=0.828 [MARRIED])  ⚠  CONCERN
+    specificity : spread=0.134  (min=0.711 [DIVORCED]  max=0.845 [SINGLE])  ⚠  CONCERN
+    fpr         : spread=0.134  (min=0.155 [SINGLE]  max=0.289 [DIVORCED])  ⚠  CONCERN
+    ppv         : spread=0.124  (min=0.385 [SINGLE]  max=0.508 [MARRIED])  ⚠  CONCERN
+    brier       : spread=0.034  (min=0.130 [SINGLE]  max=0.164 [WIDOWED])  ⚠  CONCERN
+
+──────────────────────────────────────────────────────────────────────
+DIMENSION: RACE_GROUPED
+──────────────────────────────────────────────────────────────────────
+  ASIAN                                n= 1456  prev=12.4%  AUROC=0.829  AUPRC=0.424  sens=0.641  spec=0.853  PPV=0.382  Brier=0.124
+  BLACK                                n= 4297  prev=9.9%  AUROC=0.814  AUPRC=0.382  sens=0.499  spec=0.878  PPV=0.310  Brier=0.111
+  HISPANIC/LATINO                      n= 1824  prev=10.9%  AUROC=0.798  AUPRC=0.417  sens=0.550  spec=0.862  PPV=0.327  Brier=0.122
+  OTHER/UNKNOWN                        n= 3969  prev=41.0%  AUROC=0.902  AUPRC=0.860  sens=0.904  spec=0.702  PPV=0.678  Brier=0.150
+  WHITE                                n=21972  prev=18.9%  AUROC=0.838  AUPRC=0.583  sens=0.761  spec=0.765  PPV=0.431  Brier=0.154
+
+  Disparity summary:
+    auroc       : spread=0.104  (min=0.798 [HISPANIC/LATINO]  max=0.902 [OTHER/UNKNOWN])  ⚠  CONCERN
+    sensitivity : spread=0.405  (min=0.499 [BLACK]  max=0.904 [OTHER/UNKNOWN])  ⚠  CONCERN
+    specificity : spread=0.176  (min=0.702 [OTHER/UNKNOWN]  max=0.878 [BLACK])  ⚠  CONCERN
+    fpr         : spread=0.176  (min=0.122 [BLACK]  max=0.298 [OTHER/UNKNOWN])  ⚠  CONCERN
+    ppv         : spread=0.367  (min=0.310 [BLACK]  max=0.678 [OTHER/UNKNOWN])  ⚠  CONCERN
+    brier       : spread=0.043  (min=0.111 [BLACK]  max=0.154 [WHITE])  ⚠  CONCERN
+
+──────────────────────────────────────────────────────────────────────
+SIGNIFICANT PAIRWISE DIFFERENCES (Bonferroni-corrected p<0.05)
+──────────────────────────────────────────────────────────────────────
+  ⚠  gender: F vs M  p=0.00000
+  ⚠  race: AMERICAN INDIAN/ALASKA vs BLACK/CAPE VERDEAN  p=0.00006
+  ⚠  race: AMERICAN INDIAN/ALASKA vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: AMERICAN INDIAN/ALASKA vs UNKNOWN  p=0.00000
+  ⚠  race: ASIAN vs BLACK/CAPE VERDEAN  p=0.00001
+  ⚠  race: ASIAN vs OTHER  p=0.00000
+  ⚠  race: ASIAN vs PATIENT DECLINED TO AN  p=0.00000
+  ⚠  race: ASIAN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: ASIAN vs UNKNOWN  p=0.00000
+  ⚠  race: ASIAN vs WHITE  p=0.00000
+  ⚠  race: ASIAN vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: ASIAN - ASIAN INDIAN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: ASIAN - ASIAN INDIAN vs UNKNOWN  p=0.00000
+  ⚠  race: ASIAN - CHINESE vs BLACK/CAPE VERDEAN  p=0.00003
+  ⚠  race: ASIAN - CHINESE vs OTHER  p=0.00000
+  ⚠  race: ASIAN - CHINESE vs PATIENT DECLINED TO AN  p=0.00000
+  ⚠  race: ASIAN - CHINESE vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: ASIAN - CHINESE vs UNKNOWN  p=0.00000
+  ⚠  race: ASIAN - CHINESE vs WHITE  p=0.00000
+  ⚠  race: ASIAN - CHINESE vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: ASIAN - KOREAN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: ASIAN - KOREAN vs UNKNOWN  p=0.00000
+  ⚠  race: ASIAN - SOUTH EAST ASI vs BLACK/AFRICAN AMERICAN  p=0.00006
+  ⚠  race: ASIAN - SOUTH EAST ASI vs BLACK/CAPE VERDEAN  p=0.00000
+  ⚠  race: ASIAN - SOUTH EAST ASI vs HISPANIC OR LATINO  p=0.00001
+  ⚠  race: ASIAN - SOUTH EAST ASI vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: ASIAN - SOUTH EAST ASI vs UNKNOWN  p=0.00000
+  ⚠  race: BLACK/AFRICAN vs PATIENT DECLINED TO AN  p=0.00004
+  ⚠  race: BLACK/AFRICAN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: BLACK/AFRICAN vs UNKNOWN  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs BLACK/CARIBBEAN ISLAND  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs HISPANIC/LATINO - DOMI  p=0.00001
+  ⚠  race: BLACK/AFRICAN AMERICAN vs NATIVE HAWAIIAN OR OTH  p=0.00005
+  ⚠  race: BLACK/AFRICAN AMERICAN vs OTHER  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs PATIENT DECLINED TO AN  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs PORTUGUESE  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs UNKNOWN  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs WHITE  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs WHITE - EASTERN EUROPE  p=0.00000
+  ⚠  race: BLACK/AFRICAN AMERICAN vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs BLACK/CARIBBEAN ISLAND  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs HISPANIC/LATINO - DOMI  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs HISPANIC/LATINO - PUER  p=0.00004
+  ⚠  race: BLACK/CAPE VERDEAN vs NATIVE HAWAIIAN OR OTH  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs OTHER  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs PATIENT DECLINED TO AN  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs PORTUGUESE  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs UNKNOWN  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs WHITE  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs WHITE - EASTERN EUROPE  p=0.00000
+  ⚠  race: BLACK/CAPE VERDEAN vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: BLACK/CARIBBEAN ISLAND vs HISPANIC OR LATINO  p=0.00000
+  ⚠  race: BLACK/CARIBBEAN ISLAND vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: BLACK/CARIBBEAN ISLAND vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs HISPANIC/LATINO - DOMI  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs NATIVE HAWAIIAN OR OTH  p=0.00003
+  ⚠  race: HISPANIC OR LATINO vs OTHER  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs PATIENT DECLINED TO AN  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs PORTUGUESE  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs WHITE  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs WHITE - EASTERN EUROPE  p=0.00000
+  ⚠  race: HISPANIC OR LATINO vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - COLU vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - COLU vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - CUBA vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - CUBA vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - DOMI vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - DOMI vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - GUAT vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - GUAT vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - HOND vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - HOND vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - MEXI vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - MEXI vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - PUER vs OTHER  p=0.00001
+  ⚠  race: HISPANIC/LATINO - PUER vs PATIENT DECLINED TO AN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - PUER vs PORTUGUESE  p=0.00010
+  ⚠  race: HISPANIC/LATINO - PUER vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - PUER vs UNKNOWN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - PUER vs WHITE  p=0.00000
+  ⚠  race: HISPANIC/LATINO - PUER vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - SALV vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: HISPANIC/LATINO - SALV vs UNKNOWN  p=0.00000
+  ⚠  race: MULTIPLE RACE/ETHNICIT vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: MULTIPLE RACE/ETHNICIT vs UNKNOWN  p=0.00000
+  ⚠  race: NATIVE HAWAIIAN OR OTH vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: NATIVE HAWAIIAN OR OTH vs UNKNOWN  p=0.00000
+  ⚠  race: OTHER vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: OTHER vs UNKNOWN  p=0.00000
+  ⚠  race: PATIENT DECLINED TO AN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: PATIENT DECLINED TO AN vs UNKNOWN  p=0.00000
+  ⚠  race: PATIENT DECLINED TO AN vs WHITE - RUSSIAN  p=0.00001
+  ⚠  race: PORTUGUESE vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: PORTUGUESE vs UNKNOWN  p=0.00000
+  ⚠  race: SOUTH AMERICAN vs UNABLE TO OBTAIN  p=0.00000
+  ⚠  race: SOUTH AMERICAN vs UNKNOWN  p=0.00000
+  ⚠  race: UNABLE TO OBTAIN vs WHITE  p=0.00000
+  ⚠  race: UNABLE TO OBTAIN vs WHITE - BRAZILIAN  p=0.00000
+  ⚠  race: UNABLE TO OBTAIN vs WHITE - EASTERN EUROPE  p=0.00000
+  ⚠  race: UNABLE TO OBTAIN vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: UNABLE TO OBTAIN vs WHITE - RUSSIAN  p=0.00000
+  ⚠  race: UNKNOWN vs WHITE  p=0.00000
+  ⚠  race: UNKNOWN vs WHITE - BRAZILIAN  p=0.00000
+  ⚠  race: UNKNOWN vs WHITE - EASTERN EUROPE  p=0.00000
+  ⚠  race: UNKNOWN vs WHITE - OTHER EUROPEAN  p=0.00000
+  ⚠  race: UNKNOWN vs WHITE - RUSSIAN  p=0.00000
+  ⚠  race: WHITE vs WHITE - RUSSIAN  p=0.00000
+  ⚠  race: WHITE - OTHER EUROPEAN vs WHITE - RUSSIAN  p=0.00005
+  ⚠  insurance: Medicaid vs Medicare  p=0.00000
+  ⚠  insurance: Medicaid vs No charge  p=0.00000
+  ⚠  insurance: Medicaid vs Private  p=0.00000
+  ⚠  insurance: Medicare vs No charge  p=0.00000
+  ⚠  insurance: Medicare vs Other  p=0.00000
+  ⚠  insurance: Medicare vs Private  p=0.00000
+  ⚠  insurance: No charge vs Other  p=0.00000
+  ⚠  insurance: No charge vs Private  p=0.00000
+  ⚠  insurance: Other vs Private  p=0.00000
+  ⚠  marital_status: DIVORCED vs SINGLE  p=0.00000
+  ⚠  marital_status: MARRIED vs SINGLE  p=0.00000
+  ⚠  marital_status: SINGLE vs WIDOWED  p=0.00000
+  ⚠  race_grouped: ASIAN vs BLACK  p=0.00005
+  ⚠  race_grouped: ASIAN vs OTHER/UNKNOWN  p=0.00000
+  ⚠  race_grouped: ASIAN vs WHITE  p=0.00000
+  ⚠  race_grouped: BLACK vs OTHER/UNKNOWN  p=0.00000
+  ⚠  race_grouped: BLACK vs WHITE  p=0.00000
+  ⚠  race_grouped: HISPANIC/LATINO vs OTHER/UNKNOWN  p=0.00000
+  ⚠  race_grouped: HISPANIC/LATINO vs WHITE  p=0.00000
+  ⚠  race_grouped: OTHER/UNKNOWN vs WHITE  p=0.00000
+
+──────────────────────────────────────────────────────────────────────
+OUTPUT FILES
+──────────────────────────────────────────────────────────────────────
+  fairness_metrics_summary.csv
+  fairness_report.txt
+  fairness_plots.png
+  fairness_roc_curves.png
+  fairness_auroc_heatmap.png
+  fairness_threshold_metrics.png
+======================================================================
