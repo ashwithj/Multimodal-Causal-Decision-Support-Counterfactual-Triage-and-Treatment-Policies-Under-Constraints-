@@ -182,7 +182,7 @@ All scripts expect `0_final_dataset.csv` and `best_model.pkl` in the working dir
 
 ## Team
 
-**Group 5**
+**Group 5** - Ashwith Jay, Marisa Perera, Marco Ramirez, Samuel Feemster, Jonathan Malone
 
 ---
 
